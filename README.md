@@ -1,6 +1,6 @@
 # Portfolio
 
-[Demo](https://oscarhernandez.vercel.app/)
+[Demo](https://minoterrius.github.io/Portfolio/)
 
 ## **Stack**
 
