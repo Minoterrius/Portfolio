@@ -1,0 +1,165 @@
+---
+interface Project {
+  title: string;
+  icon: string;
+  description: string;
+  status?: string;
+  technologies: string[];
+  link?: string;
+  preview?: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Marketplace",
+    icon: "M3 5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5zm2 0v14h14V5H5zm2 2h10v10H7V7zm2 2v6h6V9H9z",
+    description:
+      "This simple marketplace application is built with multiple microservices managed by an API Gateway. \nThe Event-Driven Architecture as well as the Docker deployment allow responsiveness and scalability.",
+    status: "In development",
+    technologies: [
+      "ASP.NET Core",
+      "PostgreSQL",
+      "Docker",
+      // "RabbitMQ",
+      // "Swagger",
+    ],
+    // link: "",
+    // preview: "",
+  },
+  {
+    title: "Web Pictures Reader",
+    icon: "M12 4.5C9.51472 3.03831 6.4003 2.34949 3 3V15.13C6.4003 14.432 9.51472 15.1208 12 16.579C14.4853 15.1208 17.5997 14.432 21 15.13V3C17.5997 2.34949 14.4853 3.03831 12 4.5ZM12 19.579C9.51472 18.1173 6.4003 17.4285 3 18.13V21H21V18.13C17.5997 17.4285 14.4853 18.1173 12 19.579Z",
+    description:
+      "Web Pictures Reader is a lightweight web app that lets you browse an entire folder of images in a single browser tab. \nIt was especially useful for viewing .webp images, which weren’t supported by default in apps like Windows Photos.",
+    // status: "",
+    technologies: ["Python", "Flask", "React"],
+    link: "https://github.com/Minoterrius/Web-Pictures-Reader",
+    // preview: "",
+  },
+  {
+    title: "DevOps Pipeline",
+    icon: "M4 6h4V4H4C2.9 4 2 4.9 2 6v4h2V6zm0 8H2v4c0 1.1.9 2 2 2h4v-2H4v-4zm16-8h-4V4h4c1.1 0 2 .9 2 2v4h-2V6zm0 8v4h-4v2h4c1.1 0 2-.9 2-2v-4h-2zM8 9h8v6H8V9zm2 2v2h4v-2h-4z",
+    description:
+      "A fully automated CI/CD pipeline built from scratch. It deployed a basic web application with containerized servers such as Nginx, MySQL and Redis.",
+    // status: "",
+    technologies: ["Docker", "Jenkins", "Kubernetes"],
+    // link: "",
+    // preview: "",
+  },
+];
+---
+
+<section
+  id="projects"
+  class="py-12 border-t border-[#ffffff10] text-[var(--white)]"
+>
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My work</h2>
+    <h3 class="text-4xl md:text-5xl font-medium mb-8">Projects</h3>
+
+    <div class="space-y-6">
+      {
+        projects.map((project) => (
+          <div class="p-6 border border-gray-700 rounded-lg shadow-md bg-[#121212] flex flex-col md:flex-row items-start relative">
+            {/* Left column */}
+            <div class="md:w-1/3 w-full flex flex-col items-center text-center md:text-left md:items-start">
+              {/* Icon */}
+              <div class="p-3 bg-gray-800 rounded-full mb-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-12 text-[var(--sec)]"
+                >
+                  <path d={project.icon} />
+                </svg>
+              </div>
+              {/* Title */}
+              <h4 class="text-xl font-semibold">{project.title}</h4>
+              {project.status && (
+                <span class="text-sm text-gray-400">{project.status}</span>
+              )}
+              {/* Technologies */}
+              {project.technologies && (
+                <div class="mt-3 flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span class="px-3 py-1 text-sm bg-gray-700 text-gray-200 rounded-lg">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Right column */}
+            <div class="md:w-2/3 w-full flex flex-col">
+              {/* Description */}
+              <div class="flex-grow min-h-[100px]">
+                {project.description && (
+                  <p class="text-gray-300 md:pr-20 whitespace-pre-line">
+                    {project.description}
+                  </p>
+                )}
+              </div>
+
+              {/* Links */}
+              <div class="absolute bottom-6 right-6 flex gap-4 justify-end">
+                {project.link && (
+                  <a
+                    target="_blank"
+                    href={project.link}
+                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-7"
+                    >
+                      <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
+                    </svg>
+                  </a>
+                )}
+                {project.preview && (
+                  <a
+                    target="_blank"
+                    href={project.preview}
+                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="size-7"
+                    >
+                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <a
+      target="_blank"
+      href="https://github.com/minoterrius?tab=repositories"
+      aria-label="GitHub"
+      class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+    >
+      <span class="md:text-lg text-md">More projects on</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+      >
+        <path
+          d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"
+        ></path>
+      </svg>
+    </a>
+  </div>
+</section>
