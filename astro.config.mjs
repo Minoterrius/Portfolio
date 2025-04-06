@@ -26,4 +26,6 @@ export default defineConfig({
     host: true,
     port: 4321,
   },
+  site: 'https://minoterrius.github.io',
+  base: 'Portfolio'
 });
