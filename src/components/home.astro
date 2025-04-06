@@ -2,6 +2,8 @@
 import LetterGlitch from "../React/LetterGlitch.tsx";
 import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="text-[var(--white)] mt-12 md:mt-0" id="home">
@@ -30,7 +32,7 @@ import SkillsList from "../React/SkillsList.tsx";
       <div class="flex justify-start gap-2 pt-3 md:pt-6">
         <a
           target="_blank"
-          href="/resume.pdf"
+          href=`${base}resume.pdf`
           aria-label="Resume"
           class="text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
         >
@@ -106,15 +108,15 @@ import SkillsList from "../React/SkillsList.tsx";
       <SkillsList client:load />
 
       <div class="flex flex-col items-center space-y-6 mt-10">
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center text-center">
           <span class="text-5xl font-bold text-[#a476ff]">+2</span>
           <span class="text-m text-gray-500">Years of experience</span>
         </div>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center text-center">
           <span class="text-5xl font-bold text-[#a476ff]">+5</span>
           <span class="text-m text-gray-500">Projects</span>
         </div>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center text-center">
           <span class="text-5xl font-bold text-[#a476ff]">+60</span>
           <span class="text-m text-gray-500">Leetcode problems</span>
         </div>
@@ -122,9 +124,9 @@ import SkillsList from "../React/SkillsList.tsx";
 
       <div class="relative top-6">
         <img
-          src="photo.jpg"
+          src=`${base}photo.jpg`
           alt="Thibault de Combejean"
-          class="h-[300px] w-auto rounded-xl shadow-md transition-transform duration-300 ease-in-out hover:scale-105 hover:border-[#597df386] hover:shadow-lg"
+          class="max-h-[300px] w-auto rounded-xl shadow-md object-contain transition-transform duration-300 ease-in-out hover:scale-105 hover:border-[#597df386] hover:shadow-lg"
         />
       </div>
 

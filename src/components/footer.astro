@@ -1,5 +1,7 @@
 ---
 import LikeButton from "../React/LikeButton.tsx";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="w-full py-12 border-t border-[#ffffff10]">
@@ -25,7 +27,7 @@ import LikeButton from "../React/LikeButton.tsx";
                 label: "Email",
               },
               // {
-              //   href: "/resume.pdf",
+              //   href: `${base}resume.pdf`,
               //   icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8"><path d="M6 2C5.44772 2 5 2.44772 5 3V21C5 21.5523 5.44772 22 6 22H18C18.5523 22 19 21.5523 19 21V8.41421C19 8.149 18.8946 7.89464 18.7071 7.70711L13.2929 2.29289C13.1054 2.10536 12.851 2 12.5858 2H6ZM7 4H12V9H17V20H7V4ZM13 3.41421L16.5858 7H13V3.41421ZM9 12C9 11.4477 9.44772 11 10 11H14C14.5523 11 15 11.4477 15 12C15 12.5523 14.5523 13 14 13H10C9.44772 13 9 12.5523 9 12ZM9 15C9 14.4477 9.44772 14 10 14H14C14.5523 14 15 14.4477 15 15C15 15.5523 14.5523 16 14 16H10C9.44772 16 9 15.5523 9 15Z"></path></svg>',
               //   label: "Resume",
               // },
@@ -53,21 +55,21 @@ import LikeButton from "../React/LikeButton.tsx";
               {
                 desc: "Built with",
                 name: "Astro",
-                icon: "/svg/astro.svg",
+                icon: `${base}svg/astro.svg`,
                 alt: "Astro Logo",
               },
               {
                 desc: "Styled with",
                 name: "TailwindCSS",
-                icon: "/svg/tailwindcss.svg",
+                icon: `${base}svg/tailwindcss.svg`,
                 alt: "TailwindCSS Logo",
               },
-              // {
-              //   desc: "Deployed on",
-              //   name: "Vercel",
-              //   icon: "/svg/vercel.svg",
-              //   alt: "Vercel Logo",
-              // },
+              {
+                desc: "Deployed on",
+                name: "Github Pages",
+                icon: `${base}svg/github.svg`,
+                alt: "Github Logo",
+              },
             ].map((tech) => (
               <div class="flex items-center space-x-3">
                 <span class="text-[var(--white-icon)] text-sm">
