@@ -11,11 +11,24 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Game development",
+    icon: "M3 4h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-7l2 3h3v1H6v-1h3l2-3H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm3 3h3v3H6V7zm9 0h3v3h-3V7z",
+    description:
+      "Designed and built multiple game prototypes to sharpen my coding and design skills, handling everything from art and audio to gameplay mechanics.",
+    status: "In progress",
+    technologies: [
+      "Godot",
+      ".NET",
+    ],
+    // link: "",
+    // preview: "",
+  },
+  {
     title: "Marketplace",
     icon: "M3 5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5zm2 0v14h14V5H5zm2 2h10v10H7V7zm2 2v6h6V9H9z",
     description:
       "This simple marketplace application is built with multiple microservices managed by an API Gateway. \nThe Event-Driven Architecture as well as the Docker deployment allow responsiveness and scalability.",
-    status: "In development",
+    // status: "",
     technologies: [
       "ASP.NET Core",
       "PostgreSQL",
